@@ -1,0 +1,1505 @@
+/* ==========================================================================
+   TRIBUTO A CHICO GARAPA — ESTILOS VISUAIS
+   Design afetivo, caloroso e elegante inspirado no sertão, na terra e na família
+   ========================================================================== */
+
+/* --- VARIÁVEIS DE DESIGN SYSTEM --- */
+:root {
+  /* Cores Orgânicas & Afetivas */
+  --color-canvas: #fbf8f2;         /* Algodão cru / papel artesanal suave */
+  --color-canvas-alt: #f3ecdf;     /* Pergaminho suave de apoio */
+  --color-surface-card: #ffffff;   /* Branco puro para fotos e cartões */
+  --color-wood-deep: #2a1c14;      /* Madeira nobre / café torrado */
+  --color-wood-dark: #3e2b20;      /* Marrom tronco */
+  --color-wood-medium: #684f40;    /* Marrom couro / castanho */
+  --color-wood-light: #9c8070;     /* Marrom suave */
+  --color-terracotta: #b85433;     /* Barro cozido / cerâmica regional */
+  --color-terracotta-dark: #8e391e;/* Terracota intensa */
+  --color-terracotta-soft: #faeee9;/* Fundo rosado acolhedor */
+  --color-sun: #d48c26;            /* Sol poente / milho maduro */
+  --color-sun-light: #fff8eb;      /* Luz dourada suave */
+  --color-leaf: #2e593f;           /* Folha verde da lavoura */
+  --color-leaf-soft: #edf5f0;      /* Fundo verde suave */
+  --color-text-main: #271e18;      /* Texto principal quente e nítido */
+  --color-text-muted: #64564d;     /* Texto secundário */
+  --color-border: #e6dacb;         /* Linhas sutis com tom de areia */
+  --color-border-warm: #d5c3af;
+
+  /* Tipografia */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-hand: 'Caveat', cursive, sans-serif;
+
+  /* Efeitos e Sombras */
+  --shadow-sm: 0 2px 8px rgba(42, 28, 20, 0.05);
+  --shadow-md: 0 8px 24px rgba(42, 28, 20, 0.08);
+  --shadow-lg: 0 16px 40px rgba(42, 28, 20, 0.12);
+  --shadow-polaroid: 0 12px 35px rgba(42, 28, 20, 0.14), 0 2px 6px rgba(42, 28, 20, 0.06);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--color-canvas);
+  color: var(--color-text-main);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.65;
+  color: var(--color-text-main);
+  background-color: var(--color-canvas);
+  background-image: radial-gradient(var(--color-border) 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --- CONTAINER CENTRALIZADO --- */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* --- FAIXA SUPERIOR --- */
+.top-banner {
+  background-color: var(--color-wood-deep);
+  color: #f7ede2;
+  font-size: 0.82rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-banner-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.banner-location {
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+/* --- CABEÇALHO & NAVEGAÇÃO --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 248, 242, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: var(--transition-fast);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-symbol {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-terracotta);
+  color: #fff;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(184, 84, 51, 0.25);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-wood-deep);
+  line-height: 1.1;
+}
+
+.brand-tag {
+  font-size: 0.75rem;
+  color: var(--color-wood-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-wood-medium);
+  transition: color var(--transition-fast);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-links a:hover {
+  color: var(--color-terracotta);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-terracotta);
+  transition: width var(--transition-fast);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* --- BOTÕES --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-smooth);
+}
+
+.btn-primary {
+  background-color: var(--color-terracotta);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(184, 84, 51, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-terracotta-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 84, 51, 0.38);
+}
+
+.btn-secondary {
+  background-color: var(--color-canvas);
+  color: var(--color-wood-deep);
+  border-color: var(--color-border-warm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-canvas-alt);
+  border-color: var(--color-wood-medium);
+  transform: translateY(-2px);
+}
+
+.btn-warm-header {
+  background-color: var(--color-sun-light);
+  color: var(--color-wood-deep);
+  border-color: #ebd3a8;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.88rem;
+}
+
+.btn-warm-header:hover {
+  background-color: var(--color-sun);
+  color: #fff;
+  border-color: var(--color-sun);
+}
+
+.btn-wood {
+  background-color: var(--color-wood-deep);
+  color: #f7ede2;
+  box-shadow: 0 4px 12px rgba(42, 28, 20, 0.2);
+}
+
+.btn-wood:hover {
+  background-color: #1a100b;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btn-terracotta {
+  background-color: var(--color-terracotta);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(184, 84, 51, 0.28);
+}
+
+.btn-terracotta:hover {
+  background-color: var(--color-terracotta-dark);
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 5.5rem;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-leaf-soft);
+  color: var(--color-leaf);
+  border: 1px solid #cce3d4;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-leaf);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--color-wood-deep);
+  margin-bottom: 1.5rem;
+}
+
+.highlight-serif {
+  color: var(--color-terracotta);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero-lead {
+  font-size: 1.12rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.hero-quote-card {
+  background-color: var(--color-canvas-alt);
+  border-left: 4px solid var(--color-sun);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.2rem;
+}
+
+.handwritten-quote {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  line-height: 1.35;
+  color: var(--color-wood-dark);
+  margin-bottom: 0.4rem;
+}
+
+.quote-author {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-wood-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Moldura Polaroid Afetiva */
+.polaroid-frame {
+  position: relative;
+  background-color: var(--color-surface-card);
+  padding: 1rem 1rem 1.6rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-polaroid);
+  border: 1px solid #ebd9c5;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-polaroid {
+  transform: rotate(-1.5deg);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.hero-polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid-image-wrapper {
+  overflow: hidden;
+  border-radius: 3px;
+  background-color: #2a1c14;
+}
+
+.polaroid-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.polaroid-frame:hover .polaroid-img {
+  transform: scale(1.03);
+}
+
+.polaroid-caption {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.caption-handwritten {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  color: var(--color-wood-dark);
+  line-height: 1.25;
+}
+
+.caption-date {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-wood-light);
+  font-weight: 600;
+}
+
+/* Fita adesiva artesanal no topo da foto */
+.tape-strip {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 28px;
+  background-color: rgba(230, 215, 190, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(180, 160, 130, 0.4);
+  border-right: 2px dashed rgba(180, 160, 130, 0.4);
+  z-index: 2;
+  backdrop-filter: blur(1px);
+}
+
+.tape-strip.corner-left {
+  left: 30px;
+  transform: rotate(-8deg);
+}
+
+.tape-strip.corner-right {
+  left: auto;
+  right: 30px;
+  transform: rotate(6deg);
+}
+
+/* --- TÍTULOS E CABEÇALHOS DE SEÇÃO --- */
+.section-header {
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-terracotta);
+  margin-bottom: 0.6rem;
+}
+
+.eyebrow-light {
+  color: var(--color-sun);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  color: var(--color-wood-deep);
+  line-height: 1.25;
+}
+
+.title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1.2rem;
+  position: relative;
+}
+
+.title-divider::before,
+.title-divider::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background-color: var(--color-border-warm);
+}
+
+.divider-leaf {
+  padding: 0 0.8rem;
+  font-size: 1.1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* --- SEÇÃO: A HISTÓRIA (BIO GRID) --- */
+.section-wood {
+  padding: 5.5rem 0;
+  background-color: var(--color-canvas);
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.bio-card {
+  background-color: var(--color-surface-card);
+  border-radius: var(--radius-md);
+  padding: 2.2rem 1.8rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+}
+
+.bio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--color-terracotta);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.bio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.bio-card:hover::before {
+  opacity: 1;
+}
+
+.bio-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-canvas-alt);
+  border-radius: var(--radius-md);
+}
+
+.bio-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--color-wood-deep);
+  margin-bottom: 0.85rem;
+}
+
+.bio-card p {
+  color: var(--color-text-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+/* --- SEÇÃO: OS TRÊS AMORES --- */
+.section-warm {
+  padding: 5.5rem 0;
+  background-color: var(--color-canvas-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pillars-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pillar-row {
+  display: grid;
+  grid-template-columns: 80px 1.3fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth);
+}
+
+.pillar-row:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pillar-row.reverse {
+  grid-template-columns: 80px 1.3fr 1fr;
+}
+
+.pillar-number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-border-warm);
+  line-height: 1;
+}
+
+.pillar-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-wood-deep);
+  margin-bottom: 0.75rem;
+}
+
+.pillar-content p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.pillar-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.pillar-tags li {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: var(--color-canvas);
+  color: var(--color-wood-medium);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.pillar-quote {
+  background-color: var(--color-sun-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.8rem;
+  border: 1px solid #fae7c8;
+  position: relative;
+}
+
+.quote-symbol {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-sun);
+  line-height: 0.8;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pillar-quote p {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: var(--color-wood-dark);
+}
+
+/* --- DESTAQUE DA FORMATURA / TROCA DE CHAPÉUS --- */
+.section-graduation {
+  padding: 6rem 0;
+  background-color: var(--color-wood-deep);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-graduation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  background: radial-gradient(circle at 70% 30%, rgba(212, 140, 38, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.graduation-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.frame-floating {
+  max-width: 400px;
+  margin: 0 auto;
+  transform: rotate(2deg);
+}
+
+.frame-floating:hover {
+  transform: rotate(0) scale(1.02);
+}
+
+.top-center {
+  top: -14px;
+}
+
+.graduation-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.graduation-lead {
+  font-size: 1.15rem;
+  color: #f0e6dc;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.graduation-text p {
+  color: #c9b8a8;
+  margin-bottom: 1.75rem;
+  font-size: 1.02rem;
+}
+
+.honor-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+}
+
+.honor-icon {
+  font-size: 2rem;
+  padding: 0.5rem;
+  background: rgba(212, 140, 38, 0.25);
+  border-radius: var(--radius-sm);
+  color: #fff;
+}
+
+.honor-text h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-sun);
+  margin-bottom: 0.25rem;
+}
+
+.honor-text p {
+  color: #ded1c4;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* --- ÁLBUM DE FOTOGRAFIAS --- */
+.section-album {
+  padding: 5.5rem 0;
+  background-color: var(--color-canvas);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.gallery-item {
+  background-color: var(--color-surface-card);
+  padding: 0.85rem 0.85rem 1.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  cursor: pointer;
+}
+
+.gallery-item:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.gallery-item:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.gallery-item:hover {
+  transform: rotate(0) translateY(-6px);
+  box-shadow: var(--shadow-polaroid);
+  z-index: 5;
+}
+
+.gallery-thumb-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 3 / 4;
+  background-color: #271e18;
+}
+
+.gallery-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-thumb {
+  transform: scale(1.04);
+}
+
+.gallery-zoom-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-wood-deep);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+  transition: all var(--transition-fast);
+}
+
+.gallery-zoom-btn:hover {
+  opacity: 1;
+  background-color: var(--color-terracotta);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.caption-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-wood-deep);
+}
+
+.caption-note {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--color-wood-medium);
+}
+
+/* --- SEÇÃO: O ALPENDRE DE SEU CHICO --- */
+.section-porch {
+  padding: 5.5rem 0;
+  background-color: var(--color-canvas-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.porch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.porch-card {
+  background-color: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: var(--color-sun-light);
+  color: var(--color-sun);
+  border: 1px solid #f3dcb1;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.porch-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  color: var(--color-wood-deep);
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+.wisdom-display {
+  background-color: var(--color-canvas);
+  border-left: 4px solid var(--color-terracotta);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.wisdom-quote-mark {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 0.7;
+  color: var(--color-terracotta);
+  opacity: 0.4;
+  margin-bottom: 0.5rem;
+}
+
+.wisdom-text {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  line-height: 1.35;
+  color: var(--color-wood-dark);
+  margin-bottom: 0.75rem;
+}
+
+.wisdom-tag {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-wood-light);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Cafezinho Interativo */
+.coffee-station {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--color-canvas);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.steam-cup {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-sun-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ebd09e;
+  flex-shrink: 0;
+}
+
+.cup-emoji {
+  font-size: 2.2rem;
+}
+
+.steam {
+  position: absolute;
+  width: 5px;
+  height: 14px;
+  background-color: rgba(184, 84, 51, 0.45);
+  border-radius: 10px;
+  animation: steamRise 2s infinite ease-out;
+}
+
+.steam.s1 { left: 30%; top: -8px; animation-delay: 0s; }
+.steam.s2 { left: 50%; top: -14px; animation-delay: 0.6s; }
+.steam.s3 { left: 70%; top: -8px; animation-delay: 1.2s; }
+
+@keyframes steamRise {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-16px) scaleX(2.5); opacity: 0; }
+}
+
+.coffee-counter-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.coffee-number {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-wood-deep);
+  line-height: 1.1;
+}
+
+.coffee-label {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.coffee-feedback {
+  min-height: 24px;
+  font-size: 0.88rem;
+  color: var(--color-leaf);
+  font-weight: 600;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* --- CARTA ABERTA DE DOUGLAS PATRICK --- */
+.section-letter {
+  padding: 5.5rem 0;
+  background-color: var(--color-canvas);
+}
+
+.letter-container {
+  max-width: 820px;
+}
+
+.paper-sheet {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 3.5rem 3.5rem 4rem;
+  position: relative;
+  background-image: linear-gradient(#f7efe3 1px, transparent 1px);
+  background-size: 100% 32px;
+  line-height: 32px;
+}
+
+.letter-stamp {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  width: 90px;
+  height: 90px;
+  border: 2px dashed var(--color-terracotta);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-terracotta);
+  transform: rotate(12deg);
+  opacity: 0.85;
+}
+
+.letter-stamp span {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.letter-stamp small {
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.letter-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-wood-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.letter-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  color: var(--color-wood-deep);
+  line-height: 1.25;
+  margin-bottom: 2rem;
+}
+
+.letter-body p {
+  color: var(--color-wood-dark);
+  font-size: 1.05rem;
+  margin-bottom: 1.8rem;
+  text-align: justify;
+}
+
+.letter-signature {
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-border-warm);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sig-note {
+  font-size: 0.92rem;
+  color: var(--color-wood-medium);
+  font-style: italic;
+}
+
+.sig-name {
+  font-family: var(--font-hand);
+  font-size: 2.4rem;
+  color: var(--color-terracotta);
+  font-weight: 700;
+}
+
+/* --- MURAL DE RECADOS (INTERATIVO) --- */
+.section-mural {
+  padding: 5.5rem 0;
+  background-color: var(--color-canvas-alt);
+  border-top: 1px solid var(--color-border);
+}
+
+.mural-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mural-form {
+  background-color: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-wood-deep);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-warm);
+  background-color: var(--color-canvas);
+  color: var(--color-wood-deep);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 3px rgba(184, 84, 51, 0.15);
+  background-color: #fff;
+}
+
+.mural-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.mural-note {
+  background-color: var(--color-surface-card);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-smooth);
+}
+
+.mural-note:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.note-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-terracotta);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.note-text {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: var(--color-wood-dark);
+  margin-bottom: 1.2rem;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed var(--color-border);
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-wood-light);
+}
+
+.note-author {
+  font-weight: 700;
+  color: var(--color-wood-medium);
+}
+
+/* --- DIALOG MODAL (ÁLBUM LIGHTBOX) --- */
+.photo-dialog {
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  background: var(--color-surface-card);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  width: 90vw;
+  margin: auto;
+  overflow: hidden;
+}
+
+.photo-dialog::backdrop {
+  background-color: rgba(30, 20, 14, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.dialog-close-btn:hover {
+  background-color: var(--color-terracotta);
+}
+
+.dialog-image-box {
+  background-color: #1a100b;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-img {
+  max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.dialog-info {
+  padding: 1.5rem 1.8rem;
+  background-color: var(--color-surface-card);
+}
+
+.dialog-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-wood-deep);
+  margin-bottom: 0.4rem;
+}
+
+.dialog-desc {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--color-wood-medium);
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.dialog-hint {
+  font-size: 0.75rem;
+  color: var(--color-wood-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- RODAPÉ --- */
+.site-footer {
+  background-color: var(--color-wood-deep);
+  color: #ebd9c8;
+  padding: 4.5rem 0 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer-phrase {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-dedication {
+  font-size: 0.95rem;
+  color: var(--color-sun);
+}
+
+.footer-credits {
+  text-align: right;
+  font-size: 0.88rem;
+  color: #bfaea0;
+}
+
+.footer-credits strong {
+  color: #fff;
+}
+
+.footer-subtext {
+  font-size: 0.8rem;
+  color: #8c7b6f;
+  margin-top: 0.35rem;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-sun);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color var(--transition-fast);
+}
+
+.back-to-top:hover {
+  color: #fff;
+}
+
+/* --- RESPONSIVIDADE (MOBILE & TABLET) --- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .graduation-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .frame-floating {
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillar-row, .pillar-row.reverse {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pillar-number {
+    font-size: 2rem;
+  }
+
+  .pillar-tags {
+    justify-content: center;
+  }
+
+  .porch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mural-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-credits {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-container {
+    height: auto;
+    padding: 0.75rem 0;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-sheet {
+    padding: 2rem 1.5rem;
+  }
+
+  .letter-stamp {
+    display: none;
+  }
+}

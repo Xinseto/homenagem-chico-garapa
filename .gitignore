@@ -1,0 +1,9 @@
+# Sistema e IDE
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Arquivos temporários
+*.tmp
+*~
